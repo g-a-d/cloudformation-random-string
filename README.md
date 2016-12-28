@@ -17,5 +17,16 @@ The length of string to generate.
 
 Include the punctuation characters in the generated string
 
+* RDSCompatible (optional, defaults false)
+
+If using for an RDS master password, do not include the characters /,@," in the generated random string.
+These aren't allowed to be used in an RDS master password.
+
+* KeyId (optional)
+
+If specified, encrypt the random generated string with the KMS key identified by the KeyId parameter
+and return it in the 'EncryptedRandomString' attribute. Obviously means that the lambda function needs
+permission to encrypt with this key.
+
 
 

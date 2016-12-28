@@ -15,6 +15,7 @@
       "Properties": {
         "Length": 25,
         "Punctuation": true,
+        "RDSCompatible": true,
         "ServiceToken": {"Ref": "LambdaFunctionArn"}
       }
     }
