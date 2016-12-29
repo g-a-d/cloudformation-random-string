@@ -63,9 +63,9 @@ def lambda_handler(event, context):
     except KeyError:
         rds_compatible = False
     valid_characters = string.ascii_letters+string.digits
-    if punctuation:
+    if punctuation not in [False,'false','False']:
         valid_characters = valid_characters + string.punctuation
-    if rds_compatible:
+    if rds_compatible not in [False,'false','False']:
         valid_characters = valid_characters.translate(None,'@/"')
 
     random_string = ''.join(random.choice(valid_characters) for i in range(length))
